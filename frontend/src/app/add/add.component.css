@@ -1,0 +1,28 @@
+.add-main{
+  padding: 30px;
+  max-width: 50%;
+  margin: auto;
+}
+
+.alert {
+  font-size: 12px;
+  max-width: fit-content;
+  padding: 2px 2px;
+  margin: 0;
+  position: absolute;
+}
+
+label, input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  max-width: 25%;
+  margin: auto;
+  margin-top: 20px;
+}
