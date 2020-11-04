@@ -1,7 +1,7 @@
 # CRUD-Ang-PHP-MySql
 
 This is a simple CRUD project using Angular, PHP and MySQL.
-
+![CRUD Project](project.mp4)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 ## Development server
@@ -20,6 +20,8 @@ Run `php -S 127.0.0.1:8000` inside backend/api folder for start php api. It's ne
 define('DB_PASS', ''); // Insert the password to access the MySql server
 define('DB_NAME', 'mydb'); // Change the 'mydb' to the database used
 ```
+
+Inside of backend/api there is a file "createTable.txt" with the steps to create the database, the table, and insert some data into.
 
 ## Further help
 
