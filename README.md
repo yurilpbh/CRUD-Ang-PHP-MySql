@@ -1,7 +1,7 @@
 # CRUD-Ang-PHP-MySql
 
 This is a simple CRUD project using Angular, PHP and MySQL.
-![CRUD Project](project.mp4)
+![CRUD Project](project.gif)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 ## Development server
