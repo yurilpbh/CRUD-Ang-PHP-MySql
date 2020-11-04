@@ -1,21 +1,27 @@
-<div class="row std-list">
-  <div class="col-md-2 std-list Head">Id</div>
-  <div class="col-md-2 std-list Head">First Name</div>
-  <div class="col-md-2 std-list Head">Last Name</div>
-  <div class="col-md-2 std-list Head">Email</div>
-  <div class="col-md-2 std-list Head">Edit</div>
-  <div class="col-md-2 std-list Head">Delete</div>
+<div class="row req-list">
+  <div class="col-md-1 req-list Head">clientId</div>
+  <div class="col-md-1 req-list Head">Nome</div>
+  <div class="col-md-1 req-list Head">Telefone</div>
+  <div class="col-md-1 req-list Head">Email</div>
+  <div class="col-md-1 req-list Head">Pedido</div>
+  <div class="col-md-1 req-list Head">Descrição</div>
+  <div class="col-md-1 req-list Head">Condição</div>
+  <div class="col-md-1 req-list Head">Edit</div>
+  <div class="col-md-1 req-list Head">Delete</div>
 </div>
 
-<div class="row std-list" *ngFor="let std of students">
-  <div class="col-md-2 std-list Body">{{std.sId}}</div>
-  <div class="col-md-2 std-list Body">{{std.fName}}</div>
-  <div class="col-md-2 std-list Body">{{std.lName}}</div>
-  <div class="col-md-2 std-list Body">{{std.email}}</div>
-  <div class="col-md-2 std-list Body"> <button class="btn btn-primary" (click)="edit(std)">Edit</button></div>
-  <div class="col-md-2 std-list Body"> <button class="btn btn-danger" (click)="delete(std)">Delete</button></div>
+<div class="row req-list" *ngFor="let req of requests">
+  <div class="col-md-1 req-list Body center">{{req.clientId}}</div>
+  <div class="col-md-1 req-list Body center">{{req.nome}}</div>
+  <div class="col-md-1 req-list Body">{{req.telefone}}</div>
+  <div class="col-md-1 req-list Body">{{req.email}}</div>
+  <div class="col-md-1 req-list Body">{{req.pedido}}</div>
+  <div class="col-md-1 req-list Body largeText">{{req.descricao.substring(0, 30)}}{{req.descricao.substring(30, req.descricao.length)}}</div>
+  <div class="col-md-1 req-list Body">{{req.condicao}}</div>
+  <div class="col-md-1 req-list Body"> <button class="btn btn-primary" (click)="edit(req)">Edit</button></div>
+  <div class="col-md-1 req-list Body"> <button class="btn btn-danger" (click)="delete(req)">Delete</button></div>
 </div>
 
 <div>
-  <a routerLink="/add" class="btn btn-primary">Add New Student</a>
+  <a routerLink="/add" class="btn btn-primary">Adicionar novo Pedido</a>
 </div>

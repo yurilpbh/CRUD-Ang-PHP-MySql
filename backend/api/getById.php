@@ -4,9 +4,9 @@
  */
 require 'database.php';
 
-$id = $_GET['id'];
+$clientId = $_GET['id'];
 
-  $sql = "SELECT * FROM `students` WHERE `sId` = '{$id}' LIMIT 1";
+  $sql = "SELECT * FROM requests WHERE clientId = '{$clientId}' LIMIT 1";
 
   $result = mysqli_query($con, $sql);
   $row = mysqli_fetch_assoc($result);

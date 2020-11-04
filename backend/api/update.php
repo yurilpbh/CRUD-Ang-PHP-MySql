@@ -9,14 +9,18 @@ if(isset($postdata) && !empty($postdata)){
   $request = json_decode($postdata);
 
   // Sanitize
-  $id = mysqli_real_escape_string($con, (int)$_GET['id']);
-  $fName = mysqli_real_escape_string($con, trim($request->fName));
-  $lName = mysqli_real_escape_string($con, trim($request->lName));
+  $clientId = mysqli_real_escape_string($con, (int)$_GET['id']);
+  $nome = mysqli_real_escape_string($con, $request->nome);
+  $telefone = mysqli_real_escape_string($con, $request->telefone);
   $email = mysqli_real_escape_string($con, $request->email);
+  $pedido = mysqli_real_escape_string($con, $request->pedido);
+  $descricao = mysqli_real_escape_string($con, $request->descricao);
+  $condicao = mysqli_real_escape_string($con, $request->condicao);
 
   // Update
-  $sql = "UPDATE `students` SET `fName`='$fName',`lName`='$lName',
-  `email` = '$email' WHERE `sId` = '{$id}' LIMIT 1";
+  $sql = "UPDATE requests SET nome='$nome', telefone='$telefone',
+    email = '$email', pedido = '$pedido', descricao = '$descricao', condicao = '$condicao' 
+    WHERE clientId = '{$clientId}' LIMIT 1";
   
   if(mysqli_query($con, $sql)){
     http_response_code(204);

@@ -9,13 +9,16 @@ if(isset($postdata) && !empty($postdata)){
   $request = json_decode($postdata);
 
   // Sanitize
-  $fName = mysqli_real_escape_string($con, trim ($request->fName));
-  $lName = mysqli_real_escape_string($con, trim($request->lName));
+  $nome = mysqli_real_escape_string($con, $request->nome);
+  $telefone = mysqli_real_escape_string($con, $request->telefone);
   $email = mysqli_real_escape_string($con, $request->email);
+  $pedido = mysqli_real_escape_string($con, $request->pedido);
+  $descricao = mysqli_real_escape_string($con, $request->descricao);
+  $condicao = mysqli_real_escape_string($con, $request->condicao);
 
   // Create
-  $sql = "INSERT INTO `students`(`fName`,`lName`,`email`) VALUES
-    ('{$fName}', '{$lName}','{$email}')";
+  $sql = "INSERT INTO requests (nome, telefone, email, pedido, descricao, condicao) VALUES
+    ('{$nome}', '{$telefone}','{$email}', '{$pedido}', '{$descricao}', '{$condicao}')";
 
   if(mysqli_query($con,$sql)){
     http_response_code(201);

@@ -1,0 +1,20 @@
+Follow the steps bellow to initialize the mysql in terminal, create the database, the table, insert rows and show the result.
+
+mysql -u root -p
+CREATE DATABASE mydb;
+USE mydb;
+CREATE TABLE requests (
+  clientId int(4) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  nome varchar(40) NOT NULL,
+  telefone varchar(11),
+  email varchar(40) NOT NULL,
+  pedido varchar(50) NOT NULL,
+  descricao varchar(255),
+  condicao varchar(16) NOT NULL
+);
+
+INSERT INTO requests(nome, telefone, email, pedido, descricao, condicao) VALUES 
+  ('Adolfo', '31999998888', 'adolfo@gmail.com', 'Criação de Site', 'O site deve ser desenvolvido de acordo com esse arquivo de layout figma:...', 'Em processamento'),
+  ('Leticia', '31999997777', 'leticia@gmail.com', 'Criação de App mobile', 'Quero um App para Android/IOS que seja parecido com...', 'Finalizado');
+
+SELECT * FROM requests;

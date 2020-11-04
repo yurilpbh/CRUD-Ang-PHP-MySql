@@ -5,7 +5,7 @@ require 'database.php';
 $id = $_GET['id'];
 
 // Delete
-$sql = "DELETE FROM `students` WHERE `sId` = '{$id}' LIMIT 1";
+$sql = "DELETE FROM requests WHERE clientId = '{$id}' LIMIT 1";
 
 if(mysqli_query($con, $sql)){
   htt_response_code(204);
